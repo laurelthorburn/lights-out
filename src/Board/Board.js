@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Cell from "./Cell";
+import Cell from "../Cell/Cell";
 import './Board.css';
 
 
@@ -66,7 +66,7 @@ class Board extends Component {
     // win when every cell is turned off
     // TODO: determine is the game has been won
 
-    this.setState({board, hasWon});
+    // this.setState({board, hasWon});
   }
 
 
@@ -81,6 +81,9 @@ class Board extends Component {
     // make table board
 
     // TODO
+    return(
+      "hello"
+    )
   }
 }
 
