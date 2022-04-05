@@ -1,7 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Cell from "../Cell/Cell";
-import './Board.css';
-
+import "./Board.css";
 
 /** Game board of Lights out.
  *
@@ -30,7 +29,6 @@ import './Board.css';
  **/
 
 class Board extends Component {
-
   constructor(props) {
     super(props);
 
@@ -42,16 +40,15 @@ class Board extends Component {
   createBoard() {
     let board = [];
     // TODO: create array-of-arrays of true/false values
-    return board
+    return board;
   }
 
   /** handle changing a cell: update board & determine if winner */
 
   flipCellsAround(coord) {
-    let {ncols, nrows} = this.props;
+    let { ncols, nrows } = this.props;
     let board = this.state.board;
     let [y, x] = coord.split("-").map(Number);
-
 
     function flipCell(y, x) {
       // if this coord is actually on board, flip it
@@ -69,11 +66,9 @@ class Board extends Component {
     // this.setState({board, hasWon});
   }
 
-
   /** Render game board or winning message. */
 
   render() {
-
     // if the game is won, just show a winning msg & render nothing else
 
     // TODO
@@ -81,11 +76,49 @@ class Board extends Component {
     // make table board
 
     // TODO
-    return(
-      "hello"
-    )
+    return (
+      <table>
+        <tbody>
+          <tr>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+          </tr>
+          <tr>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+          </tr>
+          <tr>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+          </tr>
+          <tr>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+          </tr>
+          <tr>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+            <td><Cell /></td>
+          </tr>
+
+        </tbody>
+      </table>
+    );
   }
 }
-
 
 export default Board;
