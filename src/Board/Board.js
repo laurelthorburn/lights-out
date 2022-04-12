@@ -76,11 +76,12 @@ class Board extends Component {
     }
 
     // TODO: flip this cell and the cells around it
-
+flipCell(y,x);
     // win when every cell is turned off
     // TODO: determine is the game has been won
+    let hasWon=false;
 
-    // this.setState({board, hasWon});
+    this.setState({board, hasWon});
   }
 
   /** Render game board or winning message. */
