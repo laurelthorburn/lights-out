@@ -29,17 +29,17 @@ import "./Board.css";
  **/
 
 class Board extends Component {
-  static defaultProps ={
+  static defaultProps = {
     nrows: 5,
-    ncols: 5, 
-    chanceLightStartsOn: 0.25
-  }
+    ncols: 5,
+    chanceLightStartsOn: 0.25,
+  };
   constructor(props) {
     super(props);
 
     this.state = {
       hasWon: false,
-      board: this.createBoard()
+      board: this.createBoard(),
     };
 
     // TODO: set initial state
@@ -50,13 +50,13 @@ class Board extends Component {
   createBoard() {
     let board = [];
     // TODO: create array-of-arrays of true/false values
-    for (let y=0; y <this.props.nrows; y++){
+    for (let y = 0; y < this.props.nrows; y++) {
       let row = [];
-      for (let x=0; x < this.props.ncols; x++){
-        row.push(Math.random() < this.props.chanceLightStartsOn)
-      }  
-    board.push.apply(row)
-  }
+      for (let x = 0; x < this.props.ncols; x++) {
+        row.push(Math.random() < this.props.chanceLightStartsOn);
+      }
+      board.push.apply(row);
+    }
     return board;
   }
 
@@ -87,13 +87,18 @@ class Board extends Component {
 
   render() {
     // if the game is won, just show a winning msg & render nothing else
+    let tblBoard = [];
+    for(let y=0; y < this.props.nrows; y++){
+      let row = [];
+      for(let x=0; x < this.props.ncols; x++){
+        row.push(<Cell isLit={this.state.board[y][x]}/>)
+      }
+    }
     return (
-      <table>
+      <table className="Board">
         <tbody>
-      <tr>
-        
-      </tr>
-       </tbody>
+          {tblBoard}
+        </tbody>
       </table>
     );
   }
